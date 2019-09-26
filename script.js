@@ -1,5 +1,5 @@
 const video = document.getElementById('video');
-const button = document.getElementById('button');
+//const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
 
@@ -72,3 +72,9 @@ button.addEventListener('click', event => {
 //});
 
 //navigator.mediaDevices.enumerateDevices().then(gotDevices);
+
+
+document.getElementById("capture").addEventListener("click",function(){
+//繪製畫面
+    context.drawImage(video,0,0,500,500);
+});
