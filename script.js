@@ -3,6 +3,7 @@ const button = document.getElementById('button');
 const select = document.getElementById('select');
 let currentStream;
 
+/*
 function stopMediaTracks(stream) {
     stream.getTracks().forEach(track => {
         track.stop();
@@ -24,7 +25,9 @@ function gotDevices(mediaDevices) {
         }
     });
 }
+*/
 
+/*
 button.addEventListener('click', event => {
     if (typeof currentStream !== 'undefined') {
         stopMediaTracks(currentStream);
@@ -47,6 +50,22 @@ button.addEventListener('click', event => {
             return navigator.mediaDevices.enumerateDevices();
         })
         .then(gotDevices)
+        .catch(error => {
+            console.error(error);
+        });
+});
+*/
+
+button.addEventListener('click', event => {
+    const constraints = {
+        video: true,
+        audio: false
+    };
+    navigator.mediaDevices
+        .getUserMedia(constraints)
+        .then(stream => {
+            video.srcObject = stream;
+        })
         .catch(error => {
             console.error(error);
         });
