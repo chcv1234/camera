@@ -58,7 +58,7 @@ button.addEventListener('click', event => {
 
 button.addEventListener('click', event => {
     const constraints = {
-        video: true,
+        video: { facingMode: { exact: "environment" } },
         audio: false
     };
     navigator.mediaDevices
