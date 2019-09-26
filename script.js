@@ -1,6 +1,7 @@
 const video = document.getElementById('video');
 //const button = document.getElementById('button');
 const select = document.getElementById('select');
+const snapshot = document.getElementById('canvas');
 let currentStream;
 
 /*
@@ -76,5 +77,8 @@ button.addEventListener('click', event => {
 
 document.getElementById("capture").addEventListener("click",function(){
 //繪製畫面
+    var context = snapshot.getContext('2d');
     context.drawImage(video,0,0,500,500);
+    var dataURL = snapshot.toDataURL('image/jpeg');
+    console.log(dataURL);
 });
