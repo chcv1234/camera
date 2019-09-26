@@ -56,7 +56,7 @@ button.addEventListener('click', event => {
 });
 */
 
-button.addEventListener('click', event => {
+//button.addEventListener('click', event => {
     const constraints = {
         video: { facingMode: { exact: "environment" } },
         audio: false
@@ -69,6 +69,6 @@ button.addEventListener('click', event => {
         .catch(error => {
             console.error(error);
         });
-});
+//});
 
 //navigator.mediaDevices.enumerateDevices().then(gotDevices);
